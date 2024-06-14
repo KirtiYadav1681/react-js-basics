@@ -9,4 +9,6 @@
 ## useContext
 ## Custom Hooks
 ## API integration
+## Debouncing
+## Throttling
  
