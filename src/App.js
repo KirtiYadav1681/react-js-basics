@@ -8,6 +8,8 @@ import HigherOrderComponent from './components/HigherOrderComponent';
 import AbstractComponent from './components/Abstraction';
 import withLoader from './components/withLoader';
 import ThemeContextProvider from './context/ThemeContextProvider';
+import DebouncedScroll from './components/DebouncedScroll';
+import ThrottleScroll from './components/ThrottleScroll';
 
 const ReduxCounterWithLoader = withLoader(ReduxCounter);
 
@@ -27,6 +29,8 @@ const App = () => {
         </ThemeContextProvider>
           <HigherOrderComponent />
         <AbstractComponent />
+        <DebouncedScroll />
+        <ThrottleScroll />
     </div>
     </Provider>
   )
