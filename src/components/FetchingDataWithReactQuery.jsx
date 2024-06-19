@@ -13,7 +13,7 @@ const FetchingDataWithReactQuery = () => {
   if (isLoading) return <h4>Loading ...</h4>;
   if (error) return <h4>Error in fetching data...{error.message}</h4>;
   return (
-    <div style={{width:"400px", border:"1px solid red"}}>
+    <div style={{width:"450px", height:"600px", border:"1px solid red", overflow: "scroll"}}>
       <h1>Fetching data with React Query</h1>
       {data?.map((_, index) => {
         return (

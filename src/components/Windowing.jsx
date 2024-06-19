@@ -19,13 +19,13 @@ const Windowing = () => {
   };
 
   return (
-    <div style={{ border: "1px solid red", width:"400px" }}>
+    <div style={{ border: "1px solid red", width:"450px" }}>
       <h2>Windowing / List Viewing and API Integration Without caching</h2>
       {loading ? (
         <SkeletonArticle />
       ) : (
         <List
-          width={400}
+          width={450}
           height={500}
           rowCount={data ? data.length : 0}
           rowHeight={100}
