@@ -1,26 +1,24 @@
+import React from "react";
+import useFetchWithCache from "../customHook/useFetchwithCache";
 import { List } from "react-virtualized";
 import "react-virtualized/styles.css";
-import useFetch from "../customHook/useFetch";
 import SkeletonArticle from "./SkeletonArticle";
 
-// Main Component
-const Windowing = () => {
-  const { data, loading } = useFetch(
-    "https://jsonplaceholder.typicode.com/comments"
-  );
+const WindowingWithFetchCaching = () => {
+  const { data, loading } = useFetchWithCache("https://jsonplaceholder.typicode.com/comments", "cachedData");
 
   // Each row renderrer
   const rowRenderer = ({ index, key, style }) => {
     return (
       <div key={key} style={style}>
-        {data[index].body}
+        {data?.[index].body}
       </div>
     );
   };
 
   return (
     <div style={{ border: "1px solid red", width:"400px" }}>
-      <h2>Windowing / List Viewing and API Integration Without caching</h2>
+      <h2>Windowing / List Viewing and API Integration with Browser caching</h2>
       {loading ? (
         <SkeletonArticle />
       ) : (
@@ -36,4 +34,4 @@ const Windowing = () => {
   );
 };
 
-export default Windowing;
+export default WindowingWithFetchCaching;
